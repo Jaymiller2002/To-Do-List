@@ -116,7 +116,11 @@ button:hover {
   left: 280px; 
   margin-Left: 5px; 
 }
-@media (max-width: 420px) {
+
+.Left {
+  position: relative;
+}
+@media (max-width: 500px) {
   #root {
     padding: 20px;
   }
@@ -133,6 +137,9 @@ button:hover {
     font-size: 14px;
   }
   .btn {
-    left: 100px;
+    left: 200px;
+  }
+  .Left {
+    left: 60px;
   }
 }

@@ -83,7 +83,7 @@ function App() {
           <button onClick={() => setView('active')}>Active</button>
           <button onClick={() => setView('completed')}>Completed</button>
         </div>
-        <div>Items left: {filteredTodos.length}</div>
+        <div className="Left">Items left: {filteredTodos.length}</div>
       </div>
     </div>
   );
