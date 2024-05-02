@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-
 import { Link } from 'react-router-dom';
 
 const Title = () => {
@@ -79,10 +78,10 @@ function App() {
             ))}
           </ul>
         </div>
-        <div>
-          <button onClick={() => setView('all')} style={{ position: 'relative', top: '30px', left: '280px', marginLeft: '5px' }}>All</button>
-          <button onClick={() => setView('active')} style={{ position: 'relative', top: '30px', left: '285px', marginLeft: '5px' }}>Active</button>
-          <button onClick={() => setView('completed')} style={{ position: 'relative', top: '30px', left: '290px', marginLeft: '5px' }}>Completed</button>
+        <div className="btn">
+          <button onClick={() => setView('all')}>All</button>
+          <button onClick={() => setView('active')}>Active</button>
+          <button onClick={() => setView('completed')}>Completed</button>
         </div>
         <div>Items left: {filteredTodos.length}</div>
       </div>

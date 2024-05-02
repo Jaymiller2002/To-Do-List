@@ -1,12 +1,14 @@
 html {
-  height: 100%;
+  height: 100vh;
   display: flex;
   justify-content: center;
-  background-color: black;
+  background-image: linear-gradient(to bottom right, #0022cfcc, #00a070 10%, #6f00d6f0 49%, #7700d2eb 50%, #00a46d 70%, #0000bd );
+  background-repeat: no-repeat;
+  background-size: cover;
+
 }
 body {
   height: 100%;
-  background-color: black;
 }
 #root {
   display: flex;
@@ -18,9 +20,9 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
 }
-#page-content {
+/*#page-content {
   flex-grow: 2;
-}
+}*/
 
 .todo-container {
   border: 1px solid #000000;
@@ -28,6 +30,9 @@ body {
   border-radius: 5px;
   color: white;
   font-weight: 600;
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
 }
 
 .todo-input {
@@ -105,20 +110,29 @@ button:hover {
   padding-right: 10px;
 }
 
-/* Media queries for responsive design */
-@media screen and (max-width: 768px) {
-  .todo-container {
+.btn {
+  position: relative; 
+  top: 30px; 
+  left: 280px; 
+  margin-Left: 5px; 
+}
+@media (max-width: 420px) {
+  #root {
     padding: 20px;
   }
-}
-
-@media screen and (max-width: 480px) {
-  .todo-input {
-    flex-direction: column;
-    align-items: center;
+  
+  .todo-container {
+    display: contents;
+    justify-content: center;
+    padding: 8px;
+    height: 50%;
+    width: 50%;
   }
-  .view-buttons {
-    display: flex;
-    justify-content: space-around;
+  
+  .todo-input input[type="text"] {
+    font-size: 14px;
+  }
+  .btn {
+    left: 100px;
   }
 }
