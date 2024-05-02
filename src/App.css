@@ -1,15 +1,18 @@
+
+/* Base styles */
 html {
   height: 100vh;
   display: flex;
   justify-content: center;
-  background-image: linear-gradient(to bottom right, #0022cfcc, #00a070 10%, #6f00d6f0 49%, #7700d2eb 50%, #00a46d 70%, #0000bd );
+  background-image: linear-gradient(to bottom right, #ff6d04 2%, #02bd98 15%, #7401e0f0 49%, #7401e0f0 50%, #02bd98 70%, #953e00e3);
   background-repeat: no-repeat;
   background-size: cover;
-
 }
+
 body {
   height: 100%;
 }
+
 #root {
   display: flex;
   height: 100vh;
@@ -20,9 +23,10 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
 }
-#page-content {
+/* For position container in the middle-(without flex-grow) or at the top-(with flex-grow) */
+/*#page-content {
   flex-grow: 2;
-}
+}*/
 
 .todo-container {
   border: 1px solid #000000;
@@ -45,7 +49,8 @@ body {
   text-align: center;
 }
 
-.todo-list ul, li {
+.todo-list ul,
+li {
   list-style: none;
 }
 
@@ -96,7 +101,7 @@ button {
 }
 
 button:hover {
-  background-image: linear-gradient(to bottom left, #04bafb, #b700ffdd );
+  background-image: linear-gradient(to bottom left, #04bafb, #b700ffdd);
   border: 1px solid rgb(204, 0, 255);
 }
 
@@ -110,37 +115,52 @@ button:hover {
   padding-right: 10px;
 }
 
-.btn {
-  position: relative; 
-  top: 10px; 
-  left: 280px; 
-  margin-Left: 5px;
-  border: none;
+.all {
+  position: relative;
+  top: 25px;
+  left: 280px;
+}
+/* Media queries for responsiveness */
+
+/* For smaller screens */
+@media (max-width: 770px) {
+  #root {
+    width: 100%; 
+    max-width: none; 
+  }
+  
+  .todo-buttons {
+    position: relative; 
+    margin: 0 auto; 
+    text-align: center; 
+    bottom: auto; 
+  }
+  .all {
+    left: 100px;
+  }
 }
 
-.Left {
-  position: relative;
-}
-@media (max-width: 500px) {
-  #root {
-    padding: 20px;
+/* For very small screens */
+@media (max-width: 480px) {
+  .todo-buttons {
+    top: 10px; 
   }
-  
+  .all {
+    left: 130px;
+  }
   .todo-container {
-    display: contents;
-    justify-content: center;
-    padding: 8px;
-    height: 50%;
-    width: 50%;
+    width: 300px;
   }
-  
-  .todo-input input[type="text"] {
-    font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .todo-buttons {
+    top: 10px;
   }
-  .btn {
-    left: 200px;
+  .all {
+    left: 195px;
   }
-  .Left {
-    left: 60px;
+  .todo-container {
+    width: 400px;
   }
 }

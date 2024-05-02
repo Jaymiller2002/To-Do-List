@@ -78,10 +78,10 @@ function App() {
             ))}
           </ul>
         </div>
-        <div className="btn">
-          <button onClick={() => setView('all')}>All</button>
-          <button onClick={() => setView('active')}>Active</button>
-          <button onClick={() => setView('completed')}>Completed</button>
+        <div>
+          <button onClick={() => setView('all')} className="all">All</button>
+          <button onClick={() => setView('active')} className="all">Active</button>
+          <button onClick={() => setView('completed')} className="all">Completed</button>
         </div>
         <div className="Left">Items left: {filteredTodos.length}</div>
       </div>
