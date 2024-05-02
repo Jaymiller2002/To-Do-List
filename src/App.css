@@ -4,7 +4,7 @@ html {
   height: 100vh;
   display: flex;
   justify-content: center;
-  background-image: linear-gradient(to bottom right, #ff6d04 2%, #02bd98 15%, #7401e0f0 49%, #7401e0f0 50%, #02bd98 70%, #953e00e3);
+  background-image: linear-gradient(to bottom right, #ff6d04 4%, #02eafff0 15%, #a900a4f0 50%, #a900a4f0 50%, #7701e5f0 69%, #0006b6e3);
   background-repeat: no-repeat;
   background-size: cover;
 }
