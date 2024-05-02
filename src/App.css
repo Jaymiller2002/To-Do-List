@@ -20,9 +20,9 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
 }
-/*#page-content {
+#page-content {
   flex-grow: 2;
-}*/
+}
 
 .todo-container {
   border: 1px solid #000000;
@@ -112,9 +112,10 @@ button:hover {
 
 .btn {
   position: relative; 
-  top: 30px; 
+  top: 10px; 
   left: 280px; 
-  margin-Left: 5px; 
+  margin-Left: 5px;
+  border: none;
 }
 
 .Left {
