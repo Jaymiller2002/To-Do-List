@@ -3,64 +3,65 @@ import { Link } from 'react-router-dom';
 
 // Title component - Renders the title of the todo list
 const Title = () => {
+  // Renders the title of the todo list
   return <h1 style={{textAlign: "center", color: "white"}}>Todo's</h1>;
 };
 
 // Main App component
 function App() {
   // State variables
-  const [todos, setTodos] = useState([]); // Todos array
-  const [todoText, setTodoText] = useState(''); // Text for new todo
-  const [view, setView] = useState('all'); // View filter (all, active, completed)
+  const [todos, setTodos] = useState([]); // Array to store todos
+  const [todoText, setTodoText] = useState(''); // Text input for new todo
+  const [view, setView] = useState('all'); // Filter for todo view (all, active, completed)
 
   // Load todos from local storage when the component mounts
   useEffect(() => {
-    const storedTodos = JSON.parse(localStorage.getItem('todos'));
+    const storedTodos = JSON.parse(localStorage.getItem('todos')); // Retrieve todos from local storage
     if (storedTodos) {
-      setTodos(storedTodos);
+      setTodos(storedTodos); // Set todos state with stored todos
     }
   }, []);
 
   // Save todos to local storage whenever the todo list changes
   useEffect(() => {
-    localStorage.setItem('todos', JSON.stringify(todos));
+    localStorage.setItem('todos', JSON.stringify(todos)); // Store todos in local storage
   }, [todos]);
 
   // Handle input change event
   const handleInputChange = (e) => {
-    setTodoText(e.target.value);
+    setTodoText(e.target.value); // Update todo text state with input value
   };
 
   // Handle add todo button click event
   const handleAddTodo = () => {
     if (todoText.trim() !== '') {
-      setTodos([...todos, { text: todoText, completed: false }]);
-      setTodoText('');
+      setTodos([...todos, { text: todoText, completed: false }]); // Add new todo to todos array
+      setTodoText(''); // Clear input field after adding todo
     }
   };
 
   // Handle remove todo button click event
   const handleRemoveTodo = (index) => {
     const newTodos = [...todos];
-    newTodos.splice(index, 1);
-    setTodos(newTodos);
+    newTodos.splice(index, 1); // Remove todo at specified index
+    setTodos(newTodos); // Update todos state with modified todos array
   };
 
   // Handle toggle todo checkbox click event
   const handleToggleTodo = (index) => {
     const newTodos = [...todos];
-    newTodos[index].completed = !newTodos[index].completed;
-    setTodos(newTodos);
+    newTodos[index].completed = !newTodos[index].completed; // Toggle completion status of todo
+    setTodos(newTodos); // Update todos state with modified todos array
   };
 
   // Filter todos based on view
   const filteredTodos = todos.filter((todo) => {
     if (view === 'active') {
-      return !todo.completed;
+      return !todo.completed; // Filter active todos
     } else if (view === 'completed') {
-      return todo.completed;
+      return todo.completed; // Filter completed todos
     }
-    return true; // 'all' view
+    return true; // Show all todos
   });
 
   // JSX rendering
