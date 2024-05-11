@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import './App.css'; // Import custom CSS file for styling
 
 // Title component - Renders the title of the todo list
 const Title = () => {
   // Renders the title of the todo list
-  return <h1 style={{textAlign: "center", color: "white"}}>Todo's</h1>;
+  return <h1 className="title">Todo's</h1>;
 };
 
 // Main App component
@@ -66,14 +67,14 @@ function App() {
 
   // JSX rendering
   return (
-    <div className="p-5">
+    <div className="container">
       {/* Render the title */}
       <Title />
       <div className="todo-container">
         {/* Todo input field */}
         <div className="todo-input">
           <input type="text" placeholder='What Needs To Be Done?' value={todoText} onChange={handleInputChange} className="input-field" />
-          <button onClick={handleAddTodo}>Add</button>
+          <button onClick={handleAddTodo} className="add-button">Add</button>
         </div>
         {/* Todo list */}
         <div className="todo-list">
@@ -86,19 +87,19 @@ function App() {
                   onChange={() => handleToggleTodo(index)}
                 />
                 <span>{todo.text}</span>
-                <button onClick={() => handleRemoveTodo(index)}>X</button>
+                <button onClick={() => handleRemoveTodo(index)} className="remove-button">X</button>
               </li>
             ))}
           </ul>
         </div>
         {/* View buttons */}
-        <div>
-          <button onClick={() => setView('all')} className="all">All</button>
-          <button onClick={() => setView('active')} className="all">Active</button>
-          <button onClick={() => setView('completed')} className="all">Completed</button>
+        <div className="view-buttons">
+          <button onClick={() => setView('all')} className={view === 'all' ? 'active' : ''}>All</button>
+          <button onClick={() => setView('active')} className={view === 'active' ? 'active' : ''}>Active</button>
+          <button onClick={() => setView('completed')} className={view === 'completed' ? 'active' : ''}>Completed</button>
         </div>
         {/* Items left counter */}
-        <div className="Left">Items left: {filteredTodos.length}</div>
+        <div className="items-left">Items left: {filteredTodos.length}</div>
       </div>
     </div>
   );
