@@ -152,18 +152,22 @@ html {
   background-size: cover;
 }
 
+body {
+  background-color: initial;
+}
+
 #root {
-  height: 100%;
-  background-image: linear-gradient(to bottom left, #ff6d04 4%, #02eafff0 15%, #a900a4f0 50%, #a900a4f0 50%, #7701e5f0 69%, #0006b6e3);
-  width: 1000px;
+  height: 100vh;
+  width: 500px;
+  border-radius: 10px;
 }
 
 .container {
-  background-color: none;
-  height: 500px;
+  height: 1000px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: transparent;
 }
 
 .todo-container {
