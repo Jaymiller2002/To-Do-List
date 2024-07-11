@@ -1,255 +1,155 @@
-
-/* Base styles 
-
-/* For position container in the middle-(without flex-grow) or at the top-(with flex-grow) */
-/*#page-content {
-  flex-grow: 2;
-}
-
-.todo-container {
-  border: 1px solid #000000;
-  padding: 10px;
-  border-radius: 5px;
-  color: white;
-  font-weight: 600;
-  box-sizing: border-box;
-  height: 100%;
-  width: 100%;
-}
-
-.todo-input {
-  margin-bottom: 10px;
-  text-align: center;
-}
-
-.todo-list {
-  margin-top: 10px;
-  text-align: center;
-}
-
-.todo-list ul,
-li {
-  list-style: none;
-}
-
-/* Additional styles for checkboxes 
-.todo-list input[type="checkbox"] {
-  margin-right: 5px;
-}
-
-/* Additional styles for completed todos 
-.todo-list li.completed span {
-  text-decoration: line-through;
-  color: #fffefe;
-}
-
-/* Additional styles for Remove buttons 
-.todo-list li button {
-  margin-left: 20px;
-  background-color: #ff0000;
-  color: #fff;
-  border: none;
-  border-radius: 3px;
-  cursor: pointer;
-}
-
-/* Additional styles for buttons container 
-.todo-buttons {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  margin-bottom: 10px;
-}
-
-.todo-buttons button {
-  padding: 5px 10px;
-  margin-left: 5px;
-  background-color: #28a745;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-button {
-  background-image: linear-gradient(to bottom right, #9912be, #125ebc);
-  border: 1px solid rgb(0, 0, 0);
-  border-radius: 5px;
-  color: #ccc;
-}
-
-button:hover {
-  background-image: linear-gradient(to bottom left, #04bafb, #b700ffdd);
-  border: 1px solid rgb(204, 0, 255);
-}
-
-.todo-input input[type="text"] {
-  font-size: 16px;
-  color: black;
-  border: 1px solid #000000;
-  border-radius: 5px;
-  box-sizing: border-box;
-  background-image: linear-gradient(to right, #ccc, #ccc);
-  padding-right: 10px;
-}
-
-.all {
-  position: relative;
-  top: 25px;
-  left: 280px;
-}
-/* Media queries for responsiveness */
-
-/* For smaller screens 
-@media (max-width: 770px) {
-  #root {
-    width: 100%; 
-    max-width: none; 
-  }
-  
-  .todo-buttons {
-    position: relative; 
-    margin: 0 auto; 
-    text-align: center; 
-    bottom: auto; 
-  }
-  .all {
-    left: 100px;
-  }
-}
-
-/* For very small screens 
-@media (max-width: 480px) {
-  .todo-buttons {
-    top: 10px; 
-  }
-  .all {
-    left: 130px;
-  }
-  .todo-container {
-    width: 300px;
-  }
-}
-
-@media (max-width: 768px) {
-  .todo-buttons {
-    top: 10px;
-  }
-  .all {
-    left: 195px;
-  }
-  .todo-container {
-    width: 400px;
-  }
-}
-*/
-html {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  background-image: linear-gradient(to bottom right, #ff6d04 4%, #02eafff0 15%, #a900a4f0 50%, #a900a4f0 50%, #7701e5f0 69%, #0006b6e3);
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+/* Global styles */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #b6b6b6;
+  background-image: url(https://e0.pxfuel.com/wallpapers/516/955/desktop-wallpaper-plain-background-plain-white-plain-and-plain-colored-dark-blue-plain.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-}
-
-body {
-  background-color: initial;
-}
-
-#root {
-  height: 100vh;
-  width: 500px;
-  border-radius: 10px;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
 }
 
 .container {
-  height: 1000px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: transparent;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  border: 1px solid black;
+  padding: 20px;
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+}
+
+.title {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
 }
 
 .todo-container {
-  width: 90%;
-  max-width: 400px;
-  background-color: #ffffffaa;
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  -webkit-box-shadow: 0px 0px 15px 5px rgba(21, 255, 0, 0.863);
-  -moz-box-shadow: 0px 0px 15px 5px rgba(21, 255, 0, 0.863);
-  box-shadow: 0px 0px 15px 5px rgba(21, 255, 0, 0.863);
-  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .todo-input {
   display: flex;
+  justify-content: space-between;
   align-items: center;
 }
 
 .input-field {
-  flex: 1;
+  flex-grow: 1;
   padding: 10px;
-  border-radius: 5px;
   border: 1px solid #ccc;
+  border-radius: 4px;
   margin-right: 10px;
-  color: #4caf50;
+  font-size: 1rem;
 }
 
 .add-button {
   padding: 10px 20px;
-  border-radius: 5px;
-  background-color: #4caf50;
-  color: #fff;
+  background-color: #007bff;
+  color: white;
   border: none;
+  border-radius: 4px;
   cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.add-button:hover {
+  background-color: #0056b3;
+}
+
+.todo-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .todo-list ul {
-  list-style-type: none;
   padding: 0;
+  margin: 0;
 }
 
 .todo-list li {
   display: flex;
+  justify-content: space-between;
   align-items: center;
   padding: 10px;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #ccc;
+  font-size: 1rem;
 }
 
-.todo-list li.completed {
+.todo-list li.completed span {
   text-decoration: line-through;
-  opacity: 0.5;
+  color: #888;
 }
 
 .remove-button {
-  margin-left: auto;
-  border: none;
   background: none;
-  color: #f44336;
+  border: none;
+  color: #888;
   cursor: pointer;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.remove-button:hover {
+  color: #e74c3c;
 }
 
 .view-buttons {
   display: flex;
   justify-content: center;
-  margin-top: 20px;
+  gap: 10px;
 }
 
 .view-buttons button {
-  padding: 5px 10px;
+  padding: 10px 20px;
+  background-color: #ddd;
   border: none;
-  background: none;
-  color: #333;
+  border-radius: 4px;
   cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
 }
 
-.view-buttons button.active {
-  color: #4caf50;
+.view-buttons button.active,
+.view-buttons button:hover {
+  background-color: #007bff;
+  color: white;
 }
 
 .items-left {
-  margin-top: 10px;
-  color: #777;
+  font-size: 1rem;
+  color: #333;
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 10px;
+  }
+
+  .input-field {
+    margin-right: 5px;
+  }
+
+  .add-button {
+    padding: 5px 10px;
+  }
+
+  .todo-list li {
+    font-size: 0.9rem;
+  }
+
+  .view-buttons button {
+    padding: 5px 10px;
+  }
 }
